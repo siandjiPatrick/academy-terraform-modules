@@ -1,7 +1,7 @@
 resource "google_compute_instance" "vm-instance1" {
 
   name         = var.instance_name
-  machine_type = "n1-standard-1"
+  machine_type = var.machine_type
   boot_disk {
     initialize_params {
       image = "debian-cloud/debian-11"
