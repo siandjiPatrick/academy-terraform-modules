@@ -5,3 +5,11 @@ variable "bucket_name" {
 variable "region" {
   type = string
 }
+
+variable "display_name" {
+  type = string
+}
+
+variable "service_name" {
+  type = string
+}
