@@ -1,5 +1,6 @@
 module "gcp_vm_instance" {
   source = "../modules/vm_instances"
-  instance_name = "my-vm-instance-from-module"
+  instance_name = "vm-instance-from-modules"
+  startup_scrip = file("./start.sh")
 
 }

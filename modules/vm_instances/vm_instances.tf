@@ -18,7 +18,7 @@ resource "google_compute_instance" "vm-instance1" {
     }
   }
 
-  tags = ["terraform", "vm-instance", "module"]
+  tags = ["terraform", "vm-instance", "module", "test"]
   
   scheduling {
     preemptible = true

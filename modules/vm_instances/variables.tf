@@ -9,10 +9,5 @@ variable "machine_type"{
 
 
 variable "startup_scrip" {
-  type = string
-  default = <<EOT
-    echo "das ist mein hostname: $HOSTNAME" > ~/my_hostname.txt
-    EOT
-  
-  
+  type = string 
 }
