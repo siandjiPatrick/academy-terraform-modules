@@ -1,6 +1,7 @@
 resource "google_compute_network" "auto-vpc_network" {
   name                    = "auto-vpc-network"
   auto_create_subnetworks = true
+  depends_on = [ google_project_service.enable_api ]
 
 }
 
@@ -20,6 +21,7 @@ resource "google_compute_firewall" "allow_http_icmp_ssh" {
   network       = google_compute_network.auto-vpc_network.id
   source_tags   = ["allow-ssh-http"]
   source_ranges = ["0.0.0.0/0"]
+  depends_on = [ google_project_service.enable_api ]
 
 }
 
@@ -34,5 +36,6 @@ resource "google_compute_address" "test_ip" {
     name          = "test-address"
     address_type  = "EXTERNAL"
     #network       = google_compute_network.auto-vpc_network.self_link
+    depends_on = [ google_project_service.enable_api ]
   
 }
